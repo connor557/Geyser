@@ -99,7 +99,7 @@ public class GeyserSpigotWorldManager extends GeyserWorldManager {
         if ((this.isLegacy && !this.isViaVersion)
             || session.getPlayerEntity() == null
             || (bukkitPlayer = Bukkit.getPlayer(session.getPlayerEntity().getUsername())) == null) {
-            return BlockTranslator.AIR;
+            return BlockTranslator.JAVA_AIR_ID;
         }
         World world = bukkitPlayer.getWorld();
         if (isLegacy) {
@@ -113,7 +113,7 @@ public class GeyserSpigotWorldManager extends GeyserWorldManager {
         if (isViaVersion) {
             return getLegacyBlock(Bukkit.getPlayer(session.getPlayerEntity().getUsername()).getWorld(), x, y, z, true);
         } else {
-            return BlockTranslator.AIR;
+            return BlockTranslator.JAVA_AIR_ID;
         }
     }
 
@@ -131,7 +131,7 @@ public class GeyserSpigotWorldManager extends GeyserWorldManager {
             int sixteenBlockId = us.myles.ViaVersion.protocols.protocol1_16to1_15_2.data.MappingData.blockStateMappings.getNewId(fifteenBlockId);
             return MappingData.blockStateMappings.getNewId(sixteenBlockId);
         } else {
-            return BlockTranslator.AIR;
+            return BlockTranslator.JAVA_AIR_ID;
         }
     }
 
